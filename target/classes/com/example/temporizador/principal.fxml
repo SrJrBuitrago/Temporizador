@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="aPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CCFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.temporizador.Controller">
+   <children>
+      <ButtonBar fx:id="bBar" layoutX="37.0" layoutY="325.0" prefHeight="40.0" prefWidth="523.0">
+        <buttons>
+            <Button fx:id="bsTiempo" mnemonicParsing="false" onAction="#subirTiempo" text="Subir Tiempo" />
+          <Button fx:id="bReiniciar" mnemonicParsing="false" onAction="#reiniciar" text="Reiniciar" />
+          <Button fx:id="bDetener" mnemonicParsing="false" onAction="#parar" text="Detener" />
+          <Button fx:id="bPausa" mnemonicParsing="false" text="Pausa" />
+            <Button fx:id="bIniciar" mnemonicParsing="false" text="Iniciar" />
+        </buttons>
+      </ButtonBar>
+      <GridPane layoutX="30.0" prefHeight="241.0" prefWidth="530.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="143.66665649414062" minHeight="10.0" prefHeight="68.66666889190674" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="232.3333511352539" minHeight="10.0" prefHeight="119.00001271565755" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="232.3333511352539" minHeight="10.0" prefHeight="74.33332061767578" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Horas" textAlignment="CENTER" wrappingWidth="174.919921875">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Minutos" textAlignment="CENTER" wrappingWidth="174.919921875" GridPane.columnIndex="1">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Segundos" textAlignment="CENTER" wrappingWidth="174.919921875" GridPane.columnIndex="2">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="aP" prefHeight="93.0" prefWidth="513.0" style="-fx-background-color: B9B6B6;" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Text fx:id="tHoras" layoutX="46.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER">
+                     <font>
+                        <Font size="74.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="aP" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B9B6B6;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Text fx:id="tMinutos" layoutX="46.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font size="74.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="aP" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B9B6B6;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Text fx:id="tSegundos" layoutX="45.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER">
+                     <font>
+                        <Font size="74.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="tfHoras" prefHeight="25.0" prefWidth="172.0" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfMinutos" prefHeight="25.0" prefWidth="148.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfSegundos" prefHeight="25.0" prefWidth="171.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
