@@ -31,110 +31,110 @@ public class Controller implements Initializable {
      * Componente FXML en el que se van a mostrar las horas al usuario
      */
     @FXML
-    private Text tHoras;
+    public Text tHoras;
     /**
      * Componente FXML en el que se van a mostrar los minutos al usuario
      */
     @FXML
-    private Text tMinutos;
+    public Text tMinutos;
     /**
      * Componente FXML en el que se van a mostrar los segundos al usuario
      */
     @FXML
-    private Text tSegundos;
+    public Text tSegundos;
     /**
      * Componente FXML el cual tiene la función de que al ser pulsado ejecute un método llamado
      *
      * @see #subirTiempo(ActionEvent el cual tiene indicado en su propiedad onAction
      */
     @FXML
-    private Button bsTiempo;
+    public Button bsTiempo;
     /**
      * Componente FXML el cual tiene la función de que al ser pulsado ejecute un método llamado subirTiempo(event)
      * el cual tiene indicado en su propiedad onAction
      * @see #subirTiempo(ActionEvent)
      */
     @FXML
-    private Button bIniciar;
+    public Button bIniciar;
     /**
      * Componente FXML el cual tiene la función de que al ser pulsado ejecute un método iniciar(event)
      * el cual tiene indicado en su propiedad onAction
      * @see #iniciar(ActionEvent)
      */
     @FXML
-    private Button bDetener;
+    public Button bDetener;
     /**
      * Componente FXML el cual tiene la función de que al ser pulsado ejecute un método llamado pausa(event)
      * el cual tiene indicado en su propiedad onAction
      ** @see #pausa(ActionEvent)
      */
     @FXML
-    private Button bPausa;
+    public Button bPausa;
     /**
      * Componente FXML el cual tiene la función de obtener datos introducidos por el usuario
      * @see #soloDosHoras(KeyEvent)
      */
     @FXML
-    private TextField tfHoras;
+    public TextField tfHoras;
     /**
      * Componente FXML el cual tiene la función de obtener datos introducidos por el usuario
      * @see #soloDosMinutos(KeyEvent)
      */
     @FXML
-    private TextField tfMinutos;
+    public TextField tfMinutos;
     /**
      * Componente FXML el cual tiene la función de obtener datos introducidos por el usuario
      * @see #soloDosMinutos(KeyEvent)
      */
     @FXML
-    private TextField tfSegundos;
+    public TextField tfSegundos;
     /**
      * Componente FXML el cual tiene la función de mostrar datos al usuario, en este caso va a mostrar la hora actual
      */
     @FXML
-    private Label tReloj;
+    public Label tReloj;
     /**
      * Objeto de la clase Timeline llamado temporizador, su uso viene a ser restar un segundo a nuestro temporizador
      * cada vez que en este objeto pase un segundo
      */
-    private Timeline temporizador;
+    public Timeline temporizador;
     /**
      * Objeto de la clase Timeline llamado reloj, va a ser mostrado por pantalla en
      */
-    private Timeline reloj;
+    public Timeline reloj;
     /**
      * Variable int la cual va a almacenar el valor de los segundos
      */
-    private int segundos;
+    public int segundos;
     /**
      * Variable int la cual va a almacenar el valor de los minutos
      */
-    private int minutos;
+    public int minutos;
     /**
      * Variable int la cual va a almacenar el valor de las horas
      */
-    private int horas;
+    public int horas;
     /**
      * Variable booleana que inicializo a true, es utilizada en el método subirTiempo(event)
      * @see #subirTiempo(ActionEvent)
      */
-    private boolean camposVacios;
+    public boolean camposVacios;
     /**
      * Variable booleana que inicializo a false, es utilizada en el método subirTiempo(event)
      *@see #subirTiempo(ActionEvent)
      */
-    private boolean camposSuperiores;
+    public boolean camposSuperiores;
     /**
      * Variable booleana que inicializo a false, es utilizada en el método subirTiempo(event)
      *@see #subirTiempo(ActionEvent)
      */
-    private boolean camposACero;
+    public boolean camposACero;
     /**
      * Constante de la clase SimpleDateFormat el cual nos va a permitir dar formato a nuestro temporizador
      * y a nuestro reloj. Es utilizado en el método initialize(url, resourceBundle)
      * @see #initialize(URL, ResourceBundle)
      */
-    private final SimpleDateFormat formato = new SimpleDateFormat("HH:mm:ss");
+    public final SimpleDateFormat formato = new SimpleDateFormat("HH:mm:ss");
 
     /**
      * Método que se ejecuta al iniciar la aplicación.
@@ -179,6 +179,20 @@ public class Controller implements Initializable {
         reloj.play();
     }
 
+    /**
+     * Este método recibe un Action Event que es un onAction en el botón bsTiempo, cuando este se pulsa se llama al
+     * método subirTiempo(ActionEvent event) que lo que hace es llamar a los métodos compruebaVacios(),
+     * camposSuperiores(), camposVacios() para dar valor true o false a tres variables booleanas que usamos más abajo
+     * con un condicional if para comprobar que todas estén en true, si todas son true llamamos al método
+     * formateaNumero(Text, int) tres veces, una para cada Text que tenemos. Activamos o desactivamos los botones que
+     * necesitamos, en este caso desactivamos todos los botones menos el de iniciar. Y volvemos a poner las variables
+     * booleanas a false para su correcto uso después. Si no se cumple ese if tenemos un else el cual pone los tres Text
+     * a cero y las variables booleanas a false
+     * @param event
+     * @see #camposSuperiores()
+     * @see #camposVacios()
+     * @see #formateaNumero(Text, int)
+     */
     public void subirTiempo(ActionEvent event) {
         camposVacios = compruebaVacios();
         camposSuperiores = camposSuperiores();
@@ -208,20 +222,44 @@ public class Controller implements Initializable {
         }
     }
 
-
+    /**
+     * Este método recibe un ActionEvent que es un onAction del botón bDetener, este método llama al método
+     * ponerTodoACero() y para el objeto Timeline temporizador
+     * @see #temporizador
+     * @see #ponerTodoACero()
+     * @param event
+     */
     public void parar(ActionEvent event) {
         ponerTodoACero();
         temporizador.stop();
     }
 
-
+    /**
+     * Este método recibe un ActionEvent que es un onAction del botón bPausa, este método pausa el temporizador y activa
+     * el botón bIniciar y desactiva los botones bsTiempo y bPausa, los demás botones ya están desactivados.
+     * @param event
+     * @see #bsTiempo
+     * @see #bIniciar
+     * @see #bPausa
+     * @see #temporizador
+     */
     public void pausa(ActionEvent event) {
         bIniciar.setDisable(false);
-
+        bPausa.setDisable(true);
         bsTiempo.setDisable(true);
         temporizador.pause();
     }
 
+    /**
+     * Este método recibe un ActionEvent que es un onAction del botón bIniciar, este método inicia el temporizadotr y
+     * activa los botones bPausa y bDetener, además desactiva los botones bInciar y bsTiempo
+     * @param event
+     * @see #bsTiempo
+     * @see #bIniciar
+     * @see #bPausa
+     * @see #bDetener
+     * @see #temporizador
+     */
     public void iniciar(ActionEvent event) {
         bPausa.setDisable(false);
         bsTiempo.setDisable(true);
@@ -313,6 +351,13 @@ public class Controller implements Initializable {
 
     }
 
+    /**
+     * Este método recibe un Text y un int básicamente comprueba comprueba con un condicional if que el int sea menor
+     * que diez, si es así, settea en el Text la siguiente cadena ("0" + int) para que cuando en el Text se tenga que
+     * representar un número menor que diez aparezca un cero a su izquierda.
+     * @param text
+     * @param tiempo
+     */
     public void formateaNumero(Text text, int tiempo) {
         if (tiempo < 10) {
             text.setText("0" + tiempo);
@@ -321,6 +366,9 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * Este método tiene una función que es poner los campos y los botones tal y como cuando se inicia la app
+     */
     public void ponerTodoACero() {
         tfSegundos.setText("");
         tfSegundos.setDisable(false);
@@ -328,9 +376,9 @@ public class Controller implements Initializable {
         tfMinutos.setText("");
         tfHoras.setDisable(false);
         tfHoras.setText("");
-        tHoras.setText("");
-        tMinutos.setText("");
-        tSegundos.setText("");
+        tHoras.setText("00");
+        tMinutos.setText("00");
+        tSegundos.setText("00");
         tHoras.setDisable(false);
         tMinutos.setDisable(false);
         tSegundos.setDisable(false);
