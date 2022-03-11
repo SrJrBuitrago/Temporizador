@@ -16,7 +16,7 @@ public class App extends Application {
         Scene scene = new Scene(loadFXML("principal"), 600, 400);
         stage.setTitle("Temporizador");
         stage.setScene(scene);
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.show();
     }
     private static Parent loadFXML(String fxml) throws IOException {
