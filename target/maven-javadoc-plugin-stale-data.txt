@@ -1,0 +1,49 @@
+@options
+@packages
+@argfile
+--class-path
+'C:/Users/joser/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2.jar;C:/Users/joser/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar;C:/Users/joser/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar;C:/Users/joser/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2.jar'
+--module-path
+'C:/Users/joser/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2-win.jar;C:/Users/joser/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-win.jar;C:/Users/joser/Desktop/DAM2/DI/Temporizador/target/classes;C:/Users/joser/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2-win.jar;C:/Users/joser/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-win.jar'
+--patch-module
+com.example.temporizador='C:/Users/joser/Desktop/DAM2/DI/Temporizador/src/main/java'
+-encoding
+'UTF-8'
+-protected
+--module-source-path
+'C:/Users/joser/Desktop/DAM2/DI/Temporizador/target/site/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/joser/Desktop/DAM2/DI/Temporizador/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Temporizador 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/joser/Desktop/DAM2/DI/Temporizador/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Temporizador 1.0-SNAPSHOT API'
+com.example.temporizador
+'C:/Users/joser/Desktop/DAM2/DI/Temporizador/src/main/java/module-info.java'
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\allclasses-index.html = 1647212677232
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\allpackages-index.html = 1647212677236
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\element-list = 1647212677159
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\help-doc.html = 1647212677274
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\index-all.html = 1647212677265
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\index.html = 1647212677268
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\jquery-ui.overrides.css = 1647212677508
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\member-search-index.js = 1647212677242
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\module-search-index.js = 1647212677238
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\overview-tree.html = 1647212677214
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\package-search-index.js = 1647212677239
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\script.js = 1647212677311
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\search.js = 1647212677313
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\stylesheet.css = 1647212677287
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\tag-search-index.js = 1647212677243
+C:\Users\joser\Desktop\DAM2\DI\Temporizador\target\site\apidocs\type-search-index.js = 1647212677240
